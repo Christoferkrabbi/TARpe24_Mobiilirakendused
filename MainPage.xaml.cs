@@ -21,7 +21,7 @@
                 BotImage.IsVisible = false; // Peidab pildi
                 CounterLabel.Text = "Pilt kadus ära! Vajuta Reset.";
             }
-            if (count >= 5)
+            if (count >= 5)// mudab värvi kui klikid 5 korda
             {
                 CounterBtn.BackgroundColor = Colors.Red;
                 CounterBtn.TextColor = Colors.White;
@@ -29,15 +29,15 @@
             CounterBtn.Text = $"Clicked {count} times";
             BotImage.Rotation += 20; //rotate image on every click, awesome
 
-            BotImage.Opacity -= 0.1;
+            BotImage.Opacity -= 0.1;//muudab pildi läibipaistvamaks iga klikiga
 
-            var rnd = new Random();
+            var rnd = new Random(); //random värv taustal
             var rndColor = Color.FromRgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
             BackgroundColor = rndColor;
 
-            if (count >= 10)
+            if (count >= 10) // Peidab pildi
             {
-                BotImage.IsVisible = false; // Peidab pildi
+                BotImage.IsVisible = false;
                 CounterLabel.Text = "Pilt kadus ära! Vajuta Reset.";
             }
 
@@ -53,13 +53,12 @@
             CounterBtn.Text = "Click again";
             BotImage.IsVisible = true;
             BotImage.Rotation = 0;
-            CounterLabel.Text = "pilt on tagasi";
+            CounterLabel.Text = "pilt on tagasi";//pilt
             BackgroundColor = Colors.White;
-            //ResetBtn.ClearValue(BackgroundColorProperty);
-            CounterBtn.ClearValue(BackgroundColorProperty);
-            BotImage.Opacity = 1;
+            CounterBtn.ClearValue(BackgroundColorProperty);//taastab nupu värvi
+            BotImage.Opacity = 1; //taastab pildi läbipaistvuse
 
-            if (BotImage.HorizontalOptions == LayoutOptions.Start)
+            if (BotImage.HorizontalOptions == LayoutOptions.Start)//liigutab pildi vasemale või paremale iga resetiga
             {
                 BotImage.HorizontalOptions = LayoutOptions.End;
             }

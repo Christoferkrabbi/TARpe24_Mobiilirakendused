@@ -43,6 +43,11 @@
                     SemanticProperties.Hint="Resets counter to zero"
                     BackgroundColor="HotPink"
                     Clicked="ResetBtn_Clicked"/>
+
+                <Button Text="Valgusfoori lehele"
+            Clicked="OnGoToValgusfoorClicked"
+            BackgroundColor="DeepSkyBlue"
+            TextColor="White" />
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

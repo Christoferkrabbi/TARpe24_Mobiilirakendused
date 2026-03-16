@@ -71,5 +71,10 @@
 
 
         }
+        private async void OnGoToValgusfoorClicked(object sender, EventArgs e)
+        {
+            // See rida avab uue ValgusfoorPage lehe
+            await Navigation.PushAsync(new ValgusfoorPage());
+        }
     }
 }

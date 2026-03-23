@@ -76,5 +76,10 @@
             // See rida avab uue ValgusfoorPage lehe
             await Navigation.PushAsync(new ValgusfoorPage());
         }
-    }
+
+		private async void OnGoToLumememmClicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new LumememmPage());
+		}
+	}
 }

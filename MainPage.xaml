@@ -36,18 +36,26 @@
                     SemanticProperties.Hint="Counts the number of times you click"
                     Clicked="OnCounterClicked"
                     HorizontalOptions="Fill" />
-                
+
                 <Button
                     x:Name="ResetBtn"
                     Text="Tagasi nulli"
                     SemanticProperties.Hint="Resets counter to zero"
                     BackgroundColor="HotPink"
                     Clicked="ResetBtn_Clicked"/>
+            </HorizontalStackLayout>
 
-                <Button Text="Valgusfoori lehele"
-            Clicked="OnGoToValgusfoorClicked"
-            BackgroundColor="DeepSkyBlue"
-            TextColor="White" />
+
+            <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+            <Button Text="Valgusfoori lehele"
+                Clicked="OnGoToValgusfoorClicked"
+                BackgroundColor="DeepSkyBlue"
+                TextColor="White" />
+
+            <Button Text="Lumememm lehele"
+                Clicked="OnGoToLumememmClicked"
+                BackgroundColor="LightBlue"
+                TextColor="Black" />
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

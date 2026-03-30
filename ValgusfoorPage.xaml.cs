@@ -2,7 +2,7 @@ namespace TARpe24_Mobiilirakendused;
 
 public partial class ValgusfoorPage : ContentPage
 {
-    bool NightMode = false;
+    bool IsNightMode = false;
     bool onSees = false;
     IDispatcherTimer timer;
     int samm = 0; // 0=Punane, 1=Kollane, 2=Roheline
@@ -14,7 +14,7 @@ public partial class ValgusfoorPage : ContentPage
 
         // Loome taimeri, mis käib iga 2 sekundi järel
         timer = Dispatcher.CreateTimer();
-        timer.Interval = TimeSpan.FromSeconds(2);
+        timer.Interval = TimeSpan.FromSeconds(2);    
         timer.Tick += (s, e) => VahetaTuldAutomaatselt();
 
 
@@ -69,6 +69,11 @@ public partial class ValgusfoorPage : ContentPage
         RohelineTuli.BackgroundColor = Colors.Gray;
     }
 
+    private void OnDayNightModeClicked(object sender, EventArgs e)
+    {
+        DayNightMode();
+    }
+
     private void VahetaTuldAutomaatselt()
     {
         //halliks
@@ -76,11 +81,17 @@ public partial class ValgusfoorPage : ContentPage
         KollaneTuli.BackgroundColor = Colors.Gray;
         RohelineTuli.BackgroundColor = Colors.Gray;
 
-        if (NightMode) {
-            if (KollaneTuli.BackgroundColor == Colors.Gray)
+        if (IsNightMode) {
+           if(samm==1)
             {
                 KollaneTuli.BackgroundColor = Colors.Yellow;
+                samm = 0;
             }
+           else
+            {
+                samm = 1;
+            }
+            return;
         }
         //case
         switch (samm)
@@ -107,15 +118,17 @@ public partial class ValgusfoorPage : ContentPage
 
     private void DayNightMode()
     {
-        NightMode = !NightMode;
-        if(NightMode)
+        IsNightMode = !IsNightMode;
+        if (IsNightMode)
         {
+            timer.Interval = TimeSpan.FromSeconds(1);
             PunaneTuli.BackgroundColor = Colors.Gray;
             RohelineTuli.BackgroundColor = Colors.Gray;
             samm = 1;
         }
         else
         {
+            timer.Interval = TimeSpan.FromSeconds(2);
             samm = 0;
         }
     }

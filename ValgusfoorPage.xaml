@@ -12,23 +12,29 @@
                HorizontalOptions="Center" 
                FontAttributes="Bold" />
 
-        <!-- tuled -->
-        <Frame x:Name="PunaneTuli" HeightRequest="100" WidthRequest="100" 
-               CornerRadius="50" BackgroundColor="Gray"/>
+		<!--Kere?-->
+		<Frame BackgroundColor="Black"
+       HasShadow="True">
+			<VerticalStackLayout>
+			<!-- tuled -->
+			<Frame x:Name="PunaneTuli" HeightRequest="100" WidthRequest="100"
+				   CornerRadius="50" BackgroundColor="Gray"/>
 
-        <Frame x:Name="KollaneTuli" HeightRequest="100" WidthRequest="100" 
-               CornerRadius="50" BackgroundColor="Gray"/>
+			<Frame x:Name="KollaneTuli" HeightRequest="100" WidthRequest="100"
+				   CornerRadius="50" BackgroundColor="Gray"/>
 
-        <Frame x:Name="RohelineTuli" HeightRequest="100" WidthRequest="100" 
-               CornerRadius="50" BackgroundColor="Gray"/>
+			<Frame x:Name="RohelineTuli" HeightRequest="100" WidthRequest="100"
+				   CornerRadius="50" BackgroundColor="Gray"/>
+			</VerticalStackLayout>
+		</Frame>
+	
+			<!-- nupud -->
+			<HorizontalStackLayout Spacing="10" HorizontalOptions="Center" Margin="0,20,0,0">
+				<Button Text="Sisse" Clicked="OnSisseClicked" WidthRequest="100" />
+				<Button Text="Välja" Clicked="OnValjaClicked" WidthRequest="100" />
+				<Button Text="Öö/päeva mode" Clicked="OnDayNightModeClicked" WidthRequest="100" />
+			</HorizontalStackLayout>
+	</VerticalStackLayout>
 
-        <!-- nupud -->
-        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" Margin="0,20,0,0">
-            <Button Text="Sisse" Clicked="OnSisseClicked" WidthRequest="100" />
-            <Button Text="Välja" Clicked="OnValjaClicked" WidthRequest="100" />
-            <Button Text="Öö/päeva mode" Clicked="DayNightMode" WidthRequest="100" />
-        </HorizontalStackLayout>
-        
-
-    </VerticalStackLayout>
+    
 </ContentPage>

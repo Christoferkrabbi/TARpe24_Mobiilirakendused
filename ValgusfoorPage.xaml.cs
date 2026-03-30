@@ -2,6 +2,7 @@ namespace TARpe24_Mobiilirakendused;
 
 public partial class ValgusfoorPage : ContentPage
 {
+    bool NightMode = false;
     bool onSees = false;
     IDispatcherTimer timer;
     int samm = 0; // 0=Punane, 1=Kollane, 2=Roheline
@@ -54,6 +55,7 @@ public partial class ValgusfoorPage : ContentPage
         onSees = true;
         samm = 0; //punasest
         timer.Start(); // tsükel
+        statusLabel.Text = " ";
     }
 
     private void OnValjaClicked(object sender, EventArgs e)
@@ -74,29 +76,47 @@ public partial class ValgusfoorPage : ContentPage
         KollaneTuli.BackgroundColor = Colors.Gray;
         RohelineTuli.BackgroundColor = Colors.Gray;
 
+        if (NightMode) {
+            if (KollaneTuli.BackgroundColor == Colors.Gray)
+            {
+                KollaneTuli.BackgroundColor = Colors.Yellow;
+            }
+        }
         //case
         switch (samm)
         {
             case 0: // PUNANE
                 PunaneTuli.BackgroundColor = Colors.Red;
-                statusLabel.Text = "Seisa!";
                 samm = 1;
                 liigubAlla = true; // Punaselt ainult kollasele
                 break;
 
             case 1: // KOLLANE
                 KollaneTuli.BackgroundColor = Colors.Yellow;
-                statusLabel.Text = "Valmista!";
                 // Kui, siis rohelisele. Kui roheliselt, siis punasele.
                 samm = liigubAlla ? 2 : 0;
                 break;
 
             case 2: // ROHELINE
                 RohelineTuli.BackgroundColor = Colors.Green;
-                statusLabel.Text = "Sõida!";
                 samm = 1;
                 liigubAlla = false; // Roheliselt ainult kollasele
                 break;
+        }
+    }
+
+    private void DayNightMode()
+    {
+        NightMode = !NightMode;
+        if(NightMode)
+        {
+            PunaneTuli.BackgroundColor = Colors.Gray;
+            RohelineTuli.BackgroundColor = Colors.Gray;
+            samm = 1;
+        }
+        else
+        {
+            samm = 0;
         }
     }
 }

@@ -121,15 +121,22 @@ public partial class ValgusfoorPage : ContentPage
         IsNightMode = !IsNightMode;
         if (IsNightMode)
         {
+            if (onSees) { 
             timer.Interval = TimeSpan.FromSeconds(1);
             PunaneTuli.BackgroundColor = Colors.Gray;
             RohelineTuli.BackgroundColor = Colors.Gray;
             samm = 1;
+            BackgroundColor = Colors.DarkBlue;
+            }
+            else{
+                statusLabel.Text = "Lülita esmalt foor sisse";
+            }
         }
         else
         {
             timer.Interval = TimeSpan.FromSeconds(2);
             samm = 0;
+            BackgroundColor = Colors.White;
         }
     }
 }

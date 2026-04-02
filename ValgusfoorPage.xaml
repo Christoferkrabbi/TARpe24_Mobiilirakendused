@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TARpe24_Mobiilirakendused.ValgusfoorPage"
              Title="ValgusfoorPage">
+
     <VerticalStackLayout Spacing="15" Padding="30" HorizontalOptions="Center">
 
         <!-- pealkiri -->
@@ -14,8 +15,8 @@
 
 		<!--Kere?-->
 		<Frame BackgroundColor="Black"
-       HasShadow="True">
-			<VerticalStackLayout>
+       HasShadow="True" WidthRequest="150">
+			<VerticalStackLayout Spacing="10">
 			<!-- tuled -->
 			<Frame x:Name="PunaneTuli" HeightRequest="100" WidthRequest="100"
 				   CornerRadius="50" BackgroundColor="Gray"/>

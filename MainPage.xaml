@@ -46,17 +46,33 @@
             </HorizontalStackLayout>
 
 
-            <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
-            <Button Text="Valgusfoori lehele"
+            <VerticalStackLayout Spacing="15" HorizontalOptions="Center">
+                <Button Text="Valgusfoori lehele"
                 Clicked="OnGoToValgusfoorClicked"
                 BackgroundColor="DeepSkyBlue"
                 TextColor="White" />
-
-            <Button Text="Lumememm lehele"
+                
+                <Button Text="Lumememm lehele"
                 Clicked="OnGoToLumememmClicked"
                 BackgroundColor="LightBlue"
                 TextColor="Black" />
-            </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                <Button Text="DateTimePage"
+                Clicked="OnGoToDateTimePageClicked"
+                BackgroundColor="LightBlue"
+                TextColor="Black" />
+            <Button Text="StepperSliderPage"
+                Clicked="OnGoToStepperSliderPageClicked"
+                BackgroundColor="LightBlue"
+                TextColor="Black" />
+                </HorizontalStackLayout>
+
+                <Button Text="RGBpicker"
+                Clicked="OnGoToRGBClicked"
+                BackgroundColor="LightBlue"
+                TextColor="Black" />
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 

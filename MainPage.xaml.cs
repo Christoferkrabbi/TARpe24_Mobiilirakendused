@@ -81,5 +81,18 @@
 		{
 			await Navigation.PushAsync(new LumememmPage());
 		}
+
+		private async void OnGoToDateTimePageClicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new DateTimePage());
+		}
+		private async void OnGoToStepperSliderPageClicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new StepperSliderPage());
+		}
+		private async void OnGoToRGBClicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new RGBpicker());
+		}
 	}
 }

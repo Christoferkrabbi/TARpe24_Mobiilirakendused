@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TARpe24_Mobiilirakendused.ContactsPage"
+             Title="Sõbra Kontaktiraamat">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Sõbra foto -->
+            <Image x:Name="SobraFoto" 
+                   Source="dotnet_bot.svg" 
+                   HeightRequest="150" 
+                   WidthRequest="150" 
+                   Aspect="AspectFill"
+                   HorizontalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="MuudaFoto_Tapped" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Entry x:Name="nimi_vali" Placeholder="Nimi" />
+            <Entry x:Name="email_phone" Placeholder="Telefon või E-mail" />
+            <Editor x:Name="kirjeldus_vali" Placeholder="Kirjeldus" HeightRequest="60" />
+
+            <Label Text="Sõnumi sisu:" FontAttributes="Bold" />
+            <Entry x:Name="sonum_vali" Placeholder="Kirjuta sõnum siia..." />
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="HELISTA" Clicked="Helista_Clicked" BackgroundColor="Green" />
+                <Button Text="SMS" Clicked="Saada_sms_Clicked" BackgroundColor="Blue" />
+                <Button Text="EMAIL" Clicked="Saada_email_Clicked" BackgroundColor="Orange" />
+            </HorizontalStackLayout>
+
+            <Button Text="JUHUSLIK ÕNNITLUS" Clicked="SuvalineOnnitlus_Clicked" BackgroundColor="Purple" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

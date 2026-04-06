@@ -80,6 +80,10 @@
                 Clicked="OnGoToTripsTrapsTrullPageClicked"
                 BackgroundColor="LightBlue"
                 TextColor="Black" />
+                <Button Text="Kontaktiraamat"
+                Clicked="OnGoToContactsPageClicked"
+                BackgroundColor="LightBlue"
+                TextColor="Black" />
                 
             </VerticalStackLayout>
         </VerticalStackLayout>

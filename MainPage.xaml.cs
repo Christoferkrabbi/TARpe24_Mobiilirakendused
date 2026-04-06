@@ -94,5 +94,10 @@
 		{
 			await Navigation.PushAsync(new RGBpicker());
 		}
+		private async void OnGoToMysteryPageClicked(object sender, EventArgs e)
+		{
+			// See rida avab uue ValgusfoorPage lehe
+			await Navigation.PushAsync(new MysteryPage());
+		}
 	}
 }

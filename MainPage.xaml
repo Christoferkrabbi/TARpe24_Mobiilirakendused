@@ -62,7 +62,7 @@
                 Clicked="OnGoToDateTimePageClicked"
                 BackgroundColor="LightBlue"
                 TextColor="Black" />
-            <Button Text="StepperSliderPage"
+                <Button Text="StepperSliderPage"
                 Clicked="OnGoToStepperSliderPageClicked"
                 BackgroundColor="LightBlue"
                 TextColor="Black" />
@@ -72,6 +72,11 @@
                 Clicked="OnGoToRGBClicked"
                 BackgroundColor="LightBlue"
                 TextColor="Black" />
+                <Button Text="Mõistatus"
+                Clicked="OnGoToMysteryPageClicked"
+                BackgroundColor="LightBlue"
+                TextColor="Black" />
+                
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TARpe24_Mobiilirakendused.TripsTrapsTrullPage"
+             Title="TripsTrapsTrullPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="20" HorizontalOptions="Center">
+
+            <Label x:Name="StatusLabel" Text="Mängija X kord" FontSize="24" HorizontalOptions="Center" FontAttributes="Bold" />
+
+            <!-- Siia genereerime koodis mänguvälja -->
+            <Grid x:Name="GameGrid" 
+                  HeightRequest="300" WidthRequest="300"
+                  ColumnSpacing="5" RowSpacing="5" />
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="Uus mäng" Clicked="OnNewGameClicked" BackgroundColor="LightGray" TextColor="Black" />
+                <Button Text="Kes on esimene?" Clicked="OnWhoStartsClicked" BackgroundColor="LightGray" TextColor="Black" />
+            </HorizontalStackLayout>
+
+            <Grid ColumnDefinitions="*,*" RowDefinitions="*,*" ColumnSpacing="10" RowSpacing="10">
+                <Button Grid.Row="0" Grid.Column="0" Text="Vali sümbol/värv" Clicked="OnSettingsClicked" FontSize="12" />
+                <Button Grid.Row="0" Grid.Column="1" Text="Mäng botiga" Clicked="OnBotToggleClicked" FontSize="12" />
+                <Button Grid.Row="1" Grid.Column="0" Text="Välja suurus (3x3)" Clicked="OnSizeClicked" FontSize="12" />
+                <Button Grid.Row="1" Grid.Column="1" Text="Reeglid" Clicked="OnRulesClicked" FontSize="12" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView> 
+</ContentPage>

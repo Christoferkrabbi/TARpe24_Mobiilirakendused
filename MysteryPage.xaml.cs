@@ -15,24 +15,24 @@ public partial class MysteryPage : ContentPage
 		oiged = 0;
 		valed = 0;
 
-		// 1. Tehnoloogia (Yes/No)
+		// 1. Tehnoloogia 
 		bool v1 = await DisplayAlert("Tehnika", "Kas Wi-Fi tähistab 'Wireless Fidelity'?", "Jah", "Ei");
-		LisaPunkt(v1 == false); // Tegelikult ei tähista see ametlikult midagi!
+		LisaPunkt(v1 == false);
 
-		// 2. Loodus (Yes/No)
+		// 2. Loodus
 		bool v2 = await DisplayAlert("Loodus", "Kas heli liigub vees kiiremini kui õhus?", "Jah", "Ei");
 		LisaPunkt(v2 == true);
 
-		// 3. Kosmos (Prompt - kasutaja peab trükkima)
+		// 3. Kosmos
 		string planeet = await DisplayPromptAsync("Kosmos", "Mis on Päikesesüsteemi suurim planeet?", "Vasta", "Loobu");
 		if (planeet?.ToLower() == "jupiter") LisaPunkt(true);
 		else LisaPunkt(false);
 
-		// 4. Geograafia (Yes/No)
+		// 4. Geograafia
 		bool v4 = await DisplayAlert("Maailm", "Kas Islandil on rohkem vulkaane kui inimesi?", "Jah", "Ei");
-		LisaPunkt(v4 == false); // Islandil on ~130 vulkaani ja ~370 000 inimest.
+		LisaPunkt(v4 == false);
 
-		// 5. Loomad (ActionSheet - valikuga küsimus)
+		// 5. Loomad
 		string loom = await DisplayActionSheet("Kes on kiireim maismaaloom?", "Loobu", null, "Gepard", "Lõvi", "Antiloop");
 		LisaPunkt(loom == "Gepard");
 

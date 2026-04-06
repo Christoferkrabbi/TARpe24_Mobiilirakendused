@@ -76,6 +76,10 @@
                 Clicked="OnGoToMysteryPageClicked"
                 BackgroundColor="LightBlue"
                 TextColor="Black" />
+                <Button Text="TripsTrapsTrull"
+                Clicked="OnGoToTripsTrapsTrullPageClicked"
+                BackgroundColor="LightBlue"
+                TextColor="Black" />
                 
             </VerticalStackLayout>
         </VerticalStackLayout>

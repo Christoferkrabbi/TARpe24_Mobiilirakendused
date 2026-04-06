@@ -78,6 +78,9 @@
 	  <MauiXaml Update="StepperSliderPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="TripsTrapsTrullPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ValgusfoorPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

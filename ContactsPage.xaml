@@ -26,7 +26,6 @@
             <Entry x:Name="sonum_vali" Placeholder="Kirjuta sõnum siia..." />
 
             <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                <Button Text="HELISTA" Clicked="Helista_Clicked" BackgroundColor="Green" />
                 <Button Text="SMS" Clicked="Saada_sms_Clicked" BackgroundColor="Blue" />
                 <Button Text="EMAIL" Clicked="Saada_email_Clicked" BackgroundColor="Orange" />
             </HorizontalStackLayout>

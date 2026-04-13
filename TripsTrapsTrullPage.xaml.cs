@@ -6,7 +6,7 @@ public partial class TripsTrapsTrullPage : ContentPage
 	string[,] board;
 	int boardSize = 3;
 	bool isBotEnabled = false;
-	bool isProcessing = false; // Takistab klikkimist boti käigu ajal
+	bool isProcessing = false;
 	Random rnd = new Random();
 
 	public TripsTrapsTrullPage()
@@ -52,10 +52,10 @@ public partial class TripsTrapsTrullPage : ContentPage
 		// 3. BOT-I KÄIK
 		if (!gameEnded && isBotEnabled && currentPlayer == "O")
 		{
-			isProcessing = true; // Lukustame ekraani, et inimene ei saaks boti ajal klikkida
+			isProcessing = true;
 			StatusLabel.Text = "Bot mõtleb...";
 
-			await Task.Delay(1000); // Viivitus
+			await Task.Delay(1000);
 
 			BotMove(); // BotMove kutsub nüüd otse PerformMove-i, mitte OnSquareClicked-i
 
@@ -167,29 +167,11 @@ public partial class TripsTrapsTrullPage : ContentPage
 		ResetBoard();
 	}
 
-	async void OnSettingsClicked(object sender, EventArgs e)
-	{
-		string action = await DisplayActionSheet("Vali värviteema", "Tühista", null, "Sini-Punane", "Roheline-Kollane");
-		// Siia saab lisada värvide muutmise loogika
-		await DisplayAlert("Seaded", $"Valisid: {action}. (See funktsioon on arenduses)", "OK");
-	}
-
 	void OnBotToggleClicked(object sender, EventArgs e)
 	{
 		isBotEnabled = !isBotEnabled;
 		((Button)sender).Text = isBotEnabled ? "Bot: SEES" : "Bot: VÄLJAS";
 		ResetBoard();
-	}
-
-	async void OnSizeClicked(object sender, EventArgs e)
-	{
-		string result = await DisplayActionSheet("Vali laua suurus", "Tühista", null, "3x3", "4x4", "5x5");
-		if (int.TryParse(result?.Substring(0, 1), out int newSize))
-		{
-			boardSize = newSize;
-			((Button)sender).Text = $"Välja suurus ({result})";
-			ResetBoard();
-		}
 	}
 
 	async void OnRulesClicked(object sender, EventArgs e)

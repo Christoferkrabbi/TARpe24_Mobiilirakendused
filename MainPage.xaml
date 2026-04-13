@@ -84,7 +84,11 @@
                 Clicked="OnGoToContactsPageClicked"
                 BackgroundColor="LightBlue"
                 TextColor="Black" />
-                
+                <Button Text="ListViewPage"
+                Clicked="OnGoToListViewPageClicked"
+                BackgroundColor="LightBlue"
+                TextColor="Black" />
+
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

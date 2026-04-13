@@ -15,17 +15,6 @@ public partial class ContactsPage : ContentPage
 		InitializeComponent();
 	}
 
-	// HELISTA funktsioon
-	private async void Helista_Clicked(object sender, EventArgs e)
-	{
-		string data = email_phone.Text;
-		if (!string.IsNullOrWhiteSpace(data))
-		{
-			if (PhoneDialer.Default.IsSupported)
-				PhoneDialer.Default.Open(data);
-		}
-	}
-
 	private async void Saada_sms_Clicked(object? sender, EventArgs e)
 	{
 		string phone = email_phone.Text;

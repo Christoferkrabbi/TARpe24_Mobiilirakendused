@@ -19,10 +19,8 @@
             </HorizontalStackLayout>
 
             <Grid ColumnDefinitions="*,*" RowDefinitions="*,*" ColumnSpacing="10" RowSpacing="10">
-                <Button Grid.Row="0" Grid.Column="0" Text="Vali sümbol/värv" Clicked="OnSettingsClicked" FontSize="12" />
-                <Button Grid.Row="0" Grid.Column="1" Text="Mäng botiga" Clicked="OnBotToggleClicked" FontSize="12" />
-                <Button Grid.Row="1" Grid.Column="0" Text="Välja suurus (3x3)" Clicked="OnSizeClicked" FontSize="12" />
-                <Button Grid.Row="1" Grid.Column="1" Text="Reeglid" Clicked="OnRulesClicked" FontSize="12" />
+                <Button Grid.Row="0" Grid.Column="0" Text="Mäng botiga" Clicked="OnBotToggleClicked" FontSize="12" />
+                <Button Grid.Row="0" Grid.Column="1" Text="Reeglid" Clicked="OnRulesClicked" FontSize="12" />
             </Grid>
 
         </VerticalStackLayout>

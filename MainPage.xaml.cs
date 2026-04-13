@@ -109,5 +109,10 @@
 			// See rida avab uue ValgusfoorPage lehe
 			await Navigation.PushAsync(new ContactsPage());
 		}
-	}
+        private async void OnGoToListViewPageClicked(object sender, EventArgs e)
+        {
+            // See rida avab uue ValgusfoorPage lehe
+            await Navigation.PushAsync(new ListViewPage());
+        }
+    }
 }

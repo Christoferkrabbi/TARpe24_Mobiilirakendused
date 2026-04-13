@@ -57,13 +57,12 @@ public partial class TripsTrapsTrullPage : ContentPage
 
 			await Task.Delay(1000);
 
-			BotMove(); // BotMove kutsub nüüd otse PerformMove-i, mitte OnSquareClicked-i
+			BotMove();
 
-			isProcessing = false; // Vabastame ekraani
+			isProcessing = false;
 		}
 	}
 
-	// UUS MEETOD: See teeb tegeliku käigu loogika
 	async Task<bool> PerformMove(Button btn, int r, int c)
 	{
 		if (btn == null) return false;
@@ -98,12 +97,10 @@ public partial class TripsTrapsTrullPage : ContentPage
 		if (availableMoves.Count > 0)
 		{
 			var move = availableMoves[rnd.Next(availableMoves.Count)];
-			// Leiame nupu üles
 			var btn = GameGrid.Children
 				.OfType<Button>()
 				.FirstOrDefault(b => Grid.GetRow(b) == move.r && Grid.GetColumn(b) == move.c);
 
-			// KASUTAME OTSE PerformMove-i, et vältida isProcessing lukku
 			_ = PerformMove(btn, move.r, move.c);
 		}
 	}
@@ -122,17 +119,14 @@ public partial class TripsTrapsTrullPage : ContentPage
 
 	bool CheckWin(int r, int c)
 	{
-		// 1. Kontrolli rida
 		bool rowWin = true;
 		for (int i = 0; i < boardSize; i++) if (board[r, i] != currentPlayer) rowWin = false;
 		if (rowWin) return true;
 
-		// 2. Kontrolli veergu
 		bool colWin = true;
 		for (int i = 0; i < boardSize; i++) if (board[i, c] != currentPlayer) colWin = false;
 		if (colWin) return true;
 
-		// 3. Kontrolli peadiagonaali (ülevalt vasakult alla paremale)
 		if (r == c)
 		{
 			bool diagWin = true;
@@ -140,7 +134,6 @@ public partial class TripsTrapsTrullPage : ContentPage
 			if (diagWin) return true;
 		}
 
-		// 4. Kontrolli kõrvaldiagonaali (ülevalt paremalt alla vasakule)
 		if (r + c == boardSize - 1)
 		{
 			bool diagWin = true;
@@ -156,7 +149,6 @@ public partial class TripsTrapsTrullPage : ContentPage
 		foreach (var cell in board) if (string.IsNullOrEmpty(cell)) return false;
 		return true;
 	}
-	// --- NUPPUDE MEETODID ---
 
 	void OnNewGameClicked(object sender, EventArgs e) => ResetBoard();
 

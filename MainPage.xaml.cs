@@ -114,5 +114,10 @@
             // See rida avab uue ValgusfoorPage lehe
             await Navigation.PushAsync(new ListViewPage());
         }
+        private async void OnGoToRiikListViewPageClicked(object sender, EventArgs e)
+        {
+            // See rida avab uue ValgusfoorPage lehe
+            await Navigation.PushAsync(new RiikListViewPage());
+        }
     }
 }

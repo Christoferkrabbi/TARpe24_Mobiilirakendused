@@ -4,9 +4,43 @@
              x:Class="TARpe24_Mobiilirakendused.RiikListViewPage"
              Title="RiikListViewPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+		<Entry x:Name="entryNimi" Placeholder="Riigi nimi" />
+		<Entry x:Name="entryPealinn" Placeholder="Pealinn" />
+		<Entry x:Name="entryRahvaarv" Placeholder="Rahvaarv" Keyboard="Numeric" />
+
+		<Label x:Name="lblValitudPilt" Text="Pilti pole valitud" TextColor="Gray" />
+
+		<Button Text="Vali pilt galeriist" Clicked="BtnValiPilt_Clicked" />
+		<Button Text="Lisa riik" Clicked="Lisa_Clicked" BackgroundColor="Green" />
+		<Button Text="Kustuta valitud" Clicked="Kustuta_Clicked" BackgroundColor="Red" />
+		<Button x:Name="btnUuenda" Text="Salvesta muudatused" Clicked="Uuenda_Clicked" BackgroundColor="Orange" IsVisible="False" />
+
+		<!-- Riikide nimekiri -->
+		<ListView x:Name="list"
+                  HasUnevenRows="True"
+                  ItemTapped="List_ItemTapped"
+                  SelectionMode="Single">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<HorizontalStackLayout Padding="10">
+							<Image Source="{Binding Lipp}"
+                                   HeightRequest="50"
+                                   WidthRequest="50"
+                                   Aspect="AspectFit"
+                                   Margin="0,0,10,0" />
+
+							<StackLayout VerticalOptions="Center">
+								<Label Text="{Binding Nimi}" FontSize="18" FontAttributes="Bold" />
+								<Label Text="{Binding Pealinn}" TextColor="Gray" />
+								<Label Text="{Binding Rahvaarv, StringFormat='Rahvaarv: {0}'}"
+                                       TextColor="DarkBlue"
+                                       FontAttributes="Bold" />
+							</StackLayout>
+						</HorizontalStackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
     </VerticalStackLayout>
 </ContentPage>

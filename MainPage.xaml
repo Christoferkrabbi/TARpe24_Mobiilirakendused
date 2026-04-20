@@ -88,6 +88,10 @@
                 Clicked="OnGoToListViewPageClicked"
                 BackgroundColor="LightBlue"
                 TextColor="Black" />
+                <Button Text="RiikListViewPage"
+                Clicked="OnGoToRiikListViewPageClicked"
+                BackgroundColor="LightBlue"
+                TextColor="Black" />
 
             </VerticalStackLayout>
         </VerticalStackLayout>

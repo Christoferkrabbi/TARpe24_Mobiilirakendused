@@ -102,8 +102,12 @@ public partial class RiikListViewPage : ContentPage
 
             btnUuenda.IsVisible = true;
 
-            await DisplayAlert("Riigi info", $"Riigi nimi: {riik.Nimi}. Riigi pealinn: {riik.Pealinn}.  Riigi rahvaarv: {riik.Rahvaarv}.    saad nüüd muuta andmeid sisestuskastides.", "Selge");
-        }
+			await DisplayAlert(
+	            "Riigi info",
+	            $"Riigi nimi: {riik.Nimi}\nRiigi pealinn: {riik.Pealinn}\nRiigi rahvaarv: {riik.Rahvaarv}\n\nSaad nüüd muuta andmeid sisestuskastides.",
+	            "Selge"
+);
+		}
     }
 
     private void List_ItemSelected(object sender, SelectedItemChangedEventArgs e)

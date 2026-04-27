@@ -10,10 +10,10 @@
 
 		<Label x:Name="lblValitudPilt" Text="Pilti pole valitud" TextColor="Gray" />
 
-		<Button Text="Vali pilt galeriist" Clicked="BtnValiPilt_Clicked" />
-		<Button Text="Lisa riik" Clicked="Lisa_Clicked" BackgroundColor="Green" />
-		<Button Text="Kustuta valitud" Clicked="Kustuta_Clicked" BackgroundColor="Red" />
-		<Button x:Name="btnUuenda" Text="Salvesta muudatused" Clicked="Uuenda_Clicked" BackgroundColor="Orange" IsVisible="False" />
+        <Button Margin="5" Text="Vali pilt galeriist" Clicked="BtnValiPilt_Clicked" BackgroundColor="Green" />
+        <Button Margin="5" Text="Lisa riik" Clicked="Lisa_Clicked" BackgroundColor="Green" />
+        <Button Margin="5" Text="Kustuta valitud" Clicked="Kustuta_Clicked" BackgroundColor="Red" />
+        <Button Margin="5" x:Name="btnUuenda" Text="Salvesta muudatused" Clicked="Uuenda_Clicked" BackgroundColor="Orange" IsVisible="False" />
 
 		<!-- Riikide nimekiri -->
 		<ListView x:Name="list"

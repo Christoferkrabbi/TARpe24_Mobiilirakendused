@@ -92,10 +92,6 @@
                 Clicked="OnGoToRiikListViewPageClicked"
                 BackgroundColor="LightBlue"
                 TextColor="Black" />
-                <Button Text="KarussellPage"
-Clicked="OnGoToKarussellPageClicked"
-BackgroundColor="LightBlue"
-TextColor="Black" />
 
             </VerticalStackLayout>
         </VerticalStackLayout>

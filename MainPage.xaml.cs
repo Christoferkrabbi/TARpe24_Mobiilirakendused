@@ -73,7 +73,6 @@
         }
         private async void OnGoToValgusfoorClicked(object sender, EventArgs e)
         {
-            // See rida avab uue ValgusfoorPage lehe
             await Navigation.PushAsync(new ValgusfoorPage());
         }
 
@@ -86,38 +85,45 @@
 		{
 			await Navigation.PushAsync(new DateTimePage());
 		}
+
 		private async void OnGoToStepperSliderPageClicked(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new StepperSliderPage());
 		}
+
 		private async void OnGoToRGBClicked(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new RGBpicker());
 		}
+
 		private async void OnGoToMysteryPageClicked(object sender, EventArgs e)
 		{
-			// See rida avab uue ValgusfoorPage lehe
 			await Navigation.PushAsync(new MysteryPage());
 		}
+
 		private async void OnGoToTripsTrapsTrullPageClicked(object sender, EventArgs e)
 		{
-			// See rida avab uue ValgusfoorPage lehe
 			await Navigation.PushAsync(new TripsTrapsTrullPage());
 		}
+
 		private async void OnGoToContactsPageClicked(object sender, EventArgs e)
 		{
-			// See rida avab uue ValgusfoorPage lehe
 			await Navigation.PushAsync(new ContactsPage());
 		}
+
         private async void OnGoToListViewPageClicked(object sender, EventArgs e)
         {
-            // See rida avab uue ValgusfoorPage lehe
             await Navigation.PushAsync(new ListViewPage());
         }
+
         private async void OnGoToRiikListViewPageClicked(object sender, EventArgs e)
         {
-            // See rida avab uue ValgusfoorPage lehe
             await Navigation.PushAsync(new RiikListViewPage());
+        }
+
+        private async void OnGoToKarussellPageClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new KarussellPage());
         }
     }
 }

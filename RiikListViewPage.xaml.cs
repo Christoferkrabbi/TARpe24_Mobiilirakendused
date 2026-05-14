@@ -101,8 +101,9 @@ public partial class RiikListViewPage : ContentPage
             lblValitudPilt.Text = $"Praegune pilt: {riik.Lipp}";
 
             btnUuenda.IsVisible = true;
+            btnKustuta.IsVisible = true;
 
-			await DisplayAlert(
+            await DisplayAlert(
 	            "Riigi info",
 	            $"Riigi nimi: {riik.Nimi}\nRiigi pealinn: {riik.Pealinn}\nRiigi rahvaarv: {riik.Rahvaarv}\n\nSaad nüüd muuta andmeid sisestuskastides.",
 	            "Selge"
@@ -119,6 +120,7 @@ public partial class RiikListViewPage : ContentPage
             entryRahvaarv.Text = valitudRiik.Rahvaarv.ToString();
 
             btnUuenda.IsVisible = true;
+            btnKustuta.IsVisible = true;
         }
     }
 
@@ -156,5 +158,6 @@ public partial class RiikListViewPage : ContentPage
         lblValitudPilt.Text = "Pilti pole valitud";
         list.SelectedItem = null;
         btnUuenda.IsVisible = false;
+        btnKustuta.IsVisible = false;
     }
 }

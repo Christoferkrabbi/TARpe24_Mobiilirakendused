@@ -11,6 +11,7 @@
                 x:Name="BotImage"
                 Source="dotnet_bot.png"
                 HeightRequest="185"
+                WidthRequest="160"
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a submarine number ten" />
 
@@ -48,62 +49,61 @@
 
             <VerticalStackLayout Spacing="15" HorizontalOptions="Center">
                 <Button Text="Valgusfoori lehele"
-                Clicked="OnGoToValgusfoorClicked"
-                BackgroundColor="DeepSkyBlue"
-                TextColor="White" />
-                
+                        Clicked="OnGoToValgusfoorClicked"
+                        BackgroundColor="DeepSkyBlue"
+                        TextColor="White" />
                 <Button Text="Lumememm lehele"
-                Clicked="OnGoToLumememmClicked"
-                BackgroundColor="LightBlue"
-                TextColor="Black" />
-
+                        Clicked="OnGoToLumememmClicked"
+                        BackgroundColor="LightBlue"
+                        TextColor="Black" />
                 <HorizontalStackLayout Spacing="10">
-                <Button Text="DateTimePage"
-                Clicked="OnGoToDateTimePageClicked"
-                BackgroundColor="LightBlue"
-                TextColor="Black" />
-                <Button Text="StepperSliderPage"
-                Clicked="OnGoToStepperSliderPageClicked"
-                BackgroundColor="LightBlue"
-                TextColor="Black" />
+                    <Button Text="DateTimePage"
+                            Clicked="OnGoToDateTimePageClicked"
+                            BackgroundColor="LightBlue"
+                            TextColor="Black" />
+                    <Button Text="StepperSliderPage"
+                            Clicked="OnGoToStepperSliderPageClicked"
+                            BackgroundColor="LightBlue"
+                            TextColor="Black" />
                 </HorizontalStackLayout>
-
                 <Button Text="RGBpicker"
-                Clicked="OnGoToRGBClicked"
-                BackgroundColor="LightBlue"
-                TextColor="Black" />
+                        Clicked="OnGoToRGBClicked"
+                        BackgroundColor="LightBlue"
+                        TextColor="Black" />
                 <Button Text="Mõistatus"
-                Clicked="OnGoToMysteryPageClicked"
-                BackgroundColor="LightBlue"
-                TextColor="Black" />
+                        Clicked="OnGoToMysteryPageClicked"
+                        BackgroundColor="LightBlue"
+                        TextColor="Black" />
                 <Button Text="TripsTrapsTrull"
-                Clicked="OnGoToTripsTrapsTrullPageClicked"
-                BackgroundColor="LightBlue"
-                TextColor="Black" />
+                        Clicked="OnGoToTripsTrapsTrullPageClicked"
+                        BackgroundColor="LightBlue"
+                        TextColor="Black" />
                 <Button Text="Kontaktiraamat"
-                Clicked="OnGoToContactsPageClicked"
-                BackgroundColor="LightBlue"
-                TextColor="Black" />
-                <Button Text="ListViewPage"
-                Clicked="OnGoToListViewPageClicked"
-                BackgroundColor="LightBlue"
-                TextColor="Black" />
-                <Button Text="RiikListViewPage"
-                Clicked="OnGoToRiikListViewPageClicked"
-                BackgroundColor="LightBlue"
-                TextColor="Black" />
+                        Clicked="OnGoToContactsPageClicked"
+                        BackgroundColor="LightBlue"
+                        TextColor="Black" />
+                <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                    <Button Text="ListViewPage"
+                            Clicked="OnGoToListViewPageClicked"
+                            BackgroundColor="LightBlue"
+                            TextColor="Black" />
+                    <Button Text="RiikListViewPage"
+                            Clicked="OnGoToRiikListViewPageClicked"
+                            BackgroundColor="LightBlue"
+                            TextColor="Black" />
+                </HorizontalStackLayout>
                 <Button Text="KarusellPage"
-                Clicked="OnGoToKarussellPageClicked"
-                BackgroundColor="LightBlue"
-                TextColor="Black" />
-                <Button Text="KarusellPage Programmeerimis keeltega"
-                Clicked="OnGoToKarussellPortfolioPageClicked"
-                BackgroundColor="LightBlue"
-                TextColor="Black" />
+                        Clicked="OnGoToKarussellPageClicked"
+                        BackgroundColor="LightBlue"
+                        TextColor="Black" />
+                <Button Text=" prog-keelte Karussell"
+                        Clicked="OnGoToKarussellPortfolioPageClicked"
+                        BackgroundColor="LightBlue"
+                        TextColor="Black" />
                 <Button Text="MemoGame"
-                Clicked="OnGoToMemoGamePageClicked"
-                BackgroundColor="LightBlue"
-                TextColor="Black" />
+                        Clicked="OnGoToMemoGamePageClicked"
+                        BackgroundColor="LightBlue"
+                        TextColor="Black" />
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

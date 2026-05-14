@@ -92,7 +92,18 @@
                 Clicked="OnGoToRiikListViewPageClicked"
                 BackgroundColor="LightBlue"
                 TextColor="Black" />
-
+                <Button Text="KarusellPage"
+                Clicked="OnGoToKarussellPageClicked"
+                BackgroundColor="LightBlue"
+                TextColor="Black" />
+                <Button Text="KarusellPage Programmeerimis keeltega"
+                Clicked="OnGoToKarussellPortfolioPageClicked"
+                BackgroundColor="LightBlue"
+                TextColor="Black" />
+                <Button Text="MemoGame"
+                Clicked="OnGoToMemoGamePageClicked"
+                BackgroundColor="LightBlue"
+                TextColor="Black" />
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

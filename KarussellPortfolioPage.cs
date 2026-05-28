@@ -39,7 +39,7 @@ public class KarussellPortfolioPage : ContentPage
             {
                 Title = "Python",
                 Description = "Suurepärane andmetöötluseks ja automatiseerimiseks",
-                ImageUrl = "python_logo",
+                ImageUrl = "python_logo.png",
                 HelloWorldCode = "print(\"Hello World\")",
                 History = "Hollandi programmeerija Guido van Rossum alustas Pythoni " +
                 "loomist 1989. aasta jõulupuhkuse ajal oma hobi- ja isikliku projektina. Ta tahtis " +
@@ -50,7 +50,7 @@ public class KarussellPortfolioPage : ContentPage
             {
                 Title = "JavaScript",
                 Description = "Veebiarenduse põhikeel",
-                ImageUrl = "javascript_logo",
+                ImageUrl = "javascript_logo.png",
                 HelloWorldCode = "console.log(\"Hello World\");",
                 History = "Brendan Eich lõi selle keele Netscape brauseri jaoks kõigest 10 päevaga. " +
                 "Alguses oli keele nimi Mocha, siis LiveScript ja lõpuks JavaScript. Viimane valiti puhtalt" +
@@ -61,7 +61,7 @@ public class KarussellPortfolioPage : ContentPage
             {
                 Title = "Java",
                 Description = "Kirjuta kord, käivita igal pool",
-                ImageUrl = "java_logo",
+                ImageUrl = "java_logo.png",
                 HelloWorldCode = "System.out.println(\"Hello World\");",
                 History = "James Gosling ja tema meeskond Sun Microsystems lõid selle keele algselt " +
                 "hoopis interaktiivsete telerite ja digibokside jaoks, kuid see oli oma ajast ees ja turg " +
@@ -72,7 +72,7 @@ public class KarussellPortfolioPage : ContentPage
             {
                 Title = "C++",
                 Description = "Suur jõudlusega süsteemikeel",
-                ImageUrl = "cplusplus_logo",
+                ImageUrl = "cplusplus_logo.png",
                 HelloWorldCode = "std::cout << \"Hello World\";",
                 History = "Bjarne Stroustrup hakkas seda keelt arendama AT&T Bell Labsis, kuna talle" +
                 "meeldis C-keele kiirus, kuid ta tahtis lisada võimaluse koondada koodi \"objektideks\". " +
@@ -100,11 +100,10 @@ public class KarussellPortfolioPage : ContentPage
 
                 var grid = new Grid();
 
-                // Keele logo pilt (AspectFit, et logod ei veniks inetult)
+                // Keele logo pilt
                 var image = new Image { Aspect = Aspect.AspectFit, Margin = new Thickness(20) };
                 image.SetBinding(Image.SourceProperty, "ImageUrl");
 
-                // Tume taust gradient tekstide loetavuseks
                 var gradient = new BoxView
                 {
                     Background = new LinearGradientBrush
@@ -119,7 +118,7 @@ public class KarussellPortfolioPage : ContentPage
                     }
                 };
 
-                // Tekstide konteiner (Nimi ja Kirjeldus)
+                // Tekstide konteiner
                 var labelStack = new VerticalStackLayout
                 {
                     VerticalOptions = LayoutOptions.End,
@@ -180,8 +179,7 @@ public class KarussellPortfolioPage : ContentPage
         };
         carouselView.IndicatorView = indicatorView;
 
-        // Automaatne kerimine iga 4 sekundi tagant
-        Device.StartTimer(TimeSpan.FromSeconds(4), () =>
+        Device.StartTimer(TimeSpan.FromSeconds(2), () =>
         {
             if (items == null || items.Count == 0) return false;
 

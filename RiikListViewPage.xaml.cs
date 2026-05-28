@@ -8,18 +8,17 @@ public class Riik
     public string Nimi { get; set; }
     public string Pealinn { get; set; }
     public int Rahvaarv { get; set; }
-    public string Lipp { get; set; } // Hoiab pildi nime või seadme failiteed
+    public string Lipp { get; set; }
 }
 
 public partial class RiikListViewPage : ContentPage
 {
-    // Kasutame ObservableCollectionit, et nimekiri uuendaks end ekraanil automaatselt
     public ObservableCollection<Riik> riigid { get; set; }
     string valitudPildiTee = "";
 
     public RiikListViewPage()
     {
-        InitializeComponent(); // See rida seob XAML-i ja C# faili
+        InitializeComponent();
 
         riigid = new ObservableCollection<Riik>
         {
@@ -27,8 +26,6 @@ public partial class RiikListViewPage : ContentPage
             new Riik { Nimi="Poola", Pealinn="Varssavi", Rahvaarv= 3797015, Lipp="poland.jpg" },
             new Riik { Nimi="Saksamaa", Pealinn="Berliin", Rahvaarv=83577140, Lipp="germany.svg" }
         };
-
-        // Ühendame andmed ListView-ga
         list.ItemsSource = riigid;
     }
 
@@ -53,6 +50,12 @@ public partial class RiikListViewPage : ContentPage
     private void Lisa_Clicked(object sender, EventArgs e)
     {
         string uusNimi = entryNimi.Text;
+
+        if (string.IsNullOrWhiteSpace(uusNimi))
+        {
+            DisplayAlert("Viga", "Täida kõik väljad", "OK");
+            return;
+        }
 
         bool riikOnOlemas = riigid.Any(r => r.Nimi.Equals(uusNimi, StringComparison.OrdinalIgnoreCase));
 
@@ -93,7 +96,6 @@ public partial class RiikListViewPage : ContentPage
     {
         if (e.Item is Riik riik)
         {
-            // 1. Täidame sisestuskastid valitud riigi andmetega
             entryNimi.Text = riik.Nimi;
             entryPealinn.Text = riik.Pealinn;
             entryRahvaarv.Text = riik.Rahvaarv.ToString();
@@ -103,25 +105,13 @@ public partial class RiikListViewPage : ContentPage
             btnUuenda.IsVisible = true;
             btnKustuta.IsVisible = true;
 
+
             await DisplayAlert(
 	            "Riigi info",
 	            $"Riigi nimi: {riik.Nimi}\nRiigi pealinn: {riik.Pealinn}\nRiigi rahvaarv: {riik.Rahvaarv}\n\nSaad nüüd muuta andmeid sisestuskastides.",
 	            "Selge"
 );
 		}
-    }
-
-    private void List_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-    {
-        if (e.SelectedItem is Riik valitudRiik)
-        {
-            entryNimi.Text = valitudRiik.Nimi;
-            entryPealinn.Text = valitudRiik.Pealinn;
-            entryRahvaarv.Text = valitudRiik.Rahvaarv.ToString();
-
-            btnUuenda.IsVisible = true;
-            btnKustuta.IsVisible = true;
-        }
     }
 
     private async void Uuenda_Clicked(object sender, EventArgs e)

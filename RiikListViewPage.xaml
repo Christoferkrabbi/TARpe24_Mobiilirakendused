@@ -15,7 +15,7 @@
         <Button Margin="5" x:Name="btnKustuta" Text="Kustuta valitud" Clicked="Kustuta_Clicked" BackgroundColor="Red" IsVisible="False"/>
         <Button Margin="5" x:Name="btnUuenda" Text="Salvesta muudatused" Clicked="Uuenda_Clicked" BackgroundColor="Orange" IsVisible="False" />
 
-		<!-- Riikide nimekiri -->
+		<!-- Riigid -->
 		<ListView x:Name="list"
                   HasUnevenRows="True"
                   ItemTapped="List_ItemTapped"
